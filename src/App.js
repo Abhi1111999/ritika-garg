@@ -1,17 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Use BrowserRouter as Router
+import Header from './pages/Header';
+import Mains from './pages/Mains';
+import "./App.css"
 
 function App() {
   return (
-    <div>
-      <div className="heading">
-        <h1>welcome to ritikas resume</h1>
+    <Router>
+      <div>
+        <Header/>
+      
       </div>
-      <div className="heading">
-        <h2>development in progress...</h2>
-      </div>
-    </div>
+      <div className='mains'>
+        <Routes> {/* Replace Switch with Routes */}
+         
+          <Route path="/main" element={<Mains />} /> {/* Use Route with 'element' prop */}
+        </Routes> {/* Closing tag for Routes */}
+        </div>
+    </Router>
   );
 }
 
 export default App;
+
+
